@@ -15,11 +15,14 @@ public class OverlayApp {
 
             final JPanel panel = new JPanel() {
                 @Override
-                protected void paintComponent(Graphics g) {
+                protected void paintComponent(final Graphics g) {
                     super.paintComponent(g);
-                    g.setColor(new Color(255, 255, 255, 200)); // halbtransparent weiß
-                    g.setFont(new Font("SansSerif", Font.BOLD, 36));
-                    g.drawString("🛰️ Alpha spricht", 100, 100);
+
+                    final Graphics2D g2d = (Graphics2D) g;
+                    g2d.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+                    g2d.setColor(new Color(255, 255, 255, 200)); // halbtransparent weiß
+                    g2d.setFont(new Font("SansSerif", Font.BOLD, 36));
+                    g2d.drawString("🛰️ Alpha spricht", 100, 100);
                 }
             };
 

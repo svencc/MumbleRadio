@@ -29,6 +29,14 @@
         </dependency>
     </dependencies>
 
+    <profiles>
+        <profile>
+            <id>overlay-dev</id>
+            <properties>
+                <exec.args>--add-opens java.desktop/java.awt=ALL-UNNAMED --add-exports java.desktop/sun.awt.X11=ALL-UNNAMED --add-exports java.desktop/java.awt.peer=ALL-UNNAMED</exec.args>
+            </properties>
+        </profile>
+    </profiles>
 
     <build>
         <plugins>
